@@ -1,0 +1,49 @@
+<templates>
+  <script type="text/x-handlebars" data-template-name='application'>
+    <div>view: {{view App.ClickableView}}</div>
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="character">
+    <div id="attributes">
+      <fieldset>
+        <legend>Attribute</legend>
+        <ul>
+          <li>
+            <label for="">Name</label>
+            <input type="text" />
+          </li>
+          <li>
+            <label for="">Spezies</label>
+            <input type="text" />
+          </li>
+          <li>
+            <label for="">Beruf</label>
+            <input type="text" />
+          </li>
+          <li class="experiencepoints">
+            <label for="">Erfahrungspunkte</label>
+            <input type="number" />
+          </li>
+          <li class="reputation">
+            <label for="">Reputation</label>
+            <input type="number" disabled="disabled" />
+          </li>
+        </ul>
+      </fieldset>
+    </div>
+
+    <div id="skillgroups">
+      <fieldset>
+        <legend>Fertigkeitsgruppen<span class="sum">0</span></legend>
+        <ul>
+          {{#each skillgroup}}
+            <li>
+              <label for="">{{label}}}</label>
+              <input id='{{id}}' type="number" value='{{value}}'/>
+            </li>
+          </ul>
+          {{/each}}
+      </fieldset>
+    </div>
+  </script>
+</templates>
